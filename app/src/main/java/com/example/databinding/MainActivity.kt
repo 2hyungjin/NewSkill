@@ -13,8 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.main=this
-
     }
+
     fun clicked(){
-        Toast.makeText(this, "click!", Toast.LENGTH_SHORT).show()}
+        text="btn is clicked"
+        Toast.makeText(this, "click!", Toast.LENGTH_SHORT).show()
+        binding.tvTitle.text=text
+    }
 }
