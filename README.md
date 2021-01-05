@@ -1,8 +1,12 @@
 # Library
+
 라이브러리 공부하기
+
 ## DataBinding
 
 XML파일에 데이터를 연동(binding)시켜 사용할 수 있게 해주는 라이브러리(JetPack)
+
+findViewById()와 kotlin extention을 대체하여 사용 가능
 
 ---
 
@@ -22,6 +26,9 @@ android {
 
 1. xml을 <layout/> 태그로 묶고 <data> 태그를 적는다. 
 
+- name : 사용할 이름
+- type : 타입(해당 activity class 혹은 data class 등 다양하게 사용 가능)
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -31,8 +38,8 @@ android {
 
     <data>
         <variable
-            name="main" 사용할 이름
-            type="com.example.databinding.MainActivity" 타입(해당 activity class 혹은 data class 등 다양하게 사용 가능/>
+            name="main"
+            type="com.example.databinding.MainActivity"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,5 +79,4 @@ class MainActivity : AppCompatActivity() {
 
 3. "binding.이름"으로 해당 xml을 가져올 수 있다. (언더 바를 기준으로 camel case 방식으로 표기 변환됨.)
 
-
-
+- Ex) tv_title -> tvTitle
