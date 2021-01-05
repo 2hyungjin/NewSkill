@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clicked(){
         text="btn is clicked"
-        Toast.makeText(this, "click!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "btn is clicked!", Toast.LENGTH_SHORT).show()
         binding.tvTitle.text=text
     }
 }
