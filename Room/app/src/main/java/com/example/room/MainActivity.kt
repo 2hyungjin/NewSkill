@@ -7,13 +7,14 @@ import com.example.room.room.Entity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val db = DB.getInstance(this)
+    private lateinit var db:DB
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        db= DB.getInstance(this)!!
         btn_insert.setOnClickListener { db?.getDao()?.insert(Entity(edt.text.toString())) }
         btn_select.setOnClickListener { db?.getDao()?.select().let {
-            textView.text=it.toString()
+            textView.text=it?.t.toString()
         } }
     }
 
