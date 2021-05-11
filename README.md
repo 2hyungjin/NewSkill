@@ -9,5 +9,5 @@
 
 [Room](https://github.com/2hyungjin/Library/blob/main/Explanation/Room.md)
 
-[Navagation](https://github.com/2hyungjin/Library/blob/main/Explanation/Navigation.md)
+[Navigation](https://github.com/2hyungjin/Library/blob/main/Explanation/Navigation.md)
 
