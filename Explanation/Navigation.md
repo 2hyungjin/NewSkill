@@ -38,8 +38,6 @@ jetpack에 포함된 Navigation을 사용하면 단일 activity에서 여러 fra
 
 res 디렉토리에서 Navagation을 생성한다.
 
-![image-20210403141241891](/Users/jinstonlee/Library/Application Support/typora-user-images/image-20210403141241891.png)
-
 Destinations에서 fragment 등을 추가하고 전환하고자 하는 Destination 끼리 연결한다.
 
 #### NavHost 만들기
