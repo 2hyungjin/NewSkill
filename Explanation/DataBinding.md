@@ -78,3 +78,8 @@ class MainActivity : AppCompatActivity() {
 3. "binding.이름"으로 해당 xml을 가져올 수 있다. (언더 바를 기준으로 camel case 방식으로 표기 변환됨.)
 
 - Ex) tv_title -> tvTitle
+
+----
+
+## ViewModel과 함께 쓰기
+
