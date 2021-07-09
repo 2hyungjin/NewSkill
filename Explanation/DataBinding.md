@@ -83,3 +83,48 @@ class MainActivity : AppCompatActivity() {
 
 ## ViewModel과 함께 쓰기
 
+DataBinding과 ViewModel을 함께 사용하면 별도의 Observe 없이도 값이 변경되면 자동으로 UI를 업데이트할 수 있다.
+
+1. ViewModel을 만든다.
+
+```kotlin
+class MainViewModel : ViewModel() {
+
+    val name = MutableLiveData<String>()
+    fun setName(name: String) {
+        this.name.value = name
+    }
+
+}
+```
+
+2. data에 ViewModel variable을 만든다
+
+```xml
+<data>
+    <variable
+        name="viewModel"
+        type="com.example.databindingwithviewmodel.MainViewModel" />
+</data>
+```
+
+3. text를 viewModel variable의 값으로 한다.
+
+```xml
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@{viewModel.name}"
+    app:layout_constraintBottom_toTopOf="@+id/edt"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent" />
+```
+
+4. activity에서 viewModel과 LifeCycle을 정해준다.
+
+   ```kotlin
+   binding.viewModel = viewModel
+   binding.lifecycleOwner = this
+   ```
+
+MainViewModel의 LiveData인 name이 변경되면 textView의 text가 자동으로 변경된다.
