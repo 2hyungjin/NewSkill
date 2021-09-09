@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class UserRepository
 @Inject constructor(val userApi: GithubApi) {
-    suspend fun getUsers(): Response<List<User>> {
+    suspend fun getUsers(): List<User> {
         return userApi.getUsers()
     }
 }

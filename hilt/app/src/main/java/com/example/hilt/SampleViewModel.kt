@@ -20,12 +20,9 @@ class SampleViewModel
     fun getUsers() {
         job = viewModelScope.launch {
             val response = userRepository.getUsers()
-            if (response.isSuccessful) {
-                _users.postValue(response.body())
-                isLoading.value = false
-            } else {
-                onError(response.message())
-            }
+            _users.postValue(response)
+            isLoading.value = false
+
         }
     }
 
